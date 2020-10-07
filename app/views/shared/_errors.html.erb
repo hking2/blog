@@ -1,0 +1,13 @@
+<% if @article.errors.any? %>
+  <div class="container alert alert-danger alert-dismissible fade show">
+    <h2 class="alert">Please fix the following errors to submit form:</h2>
+    <uL>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li class="alert"><%= msg %></li>
+      <% end %>
+    <ul>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
