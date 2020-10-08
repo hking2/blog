@@ -15,7 +15,7 @@
       <%= f.password_field :password, class: "form-control", placeholder: "Enter a password" %>
     </div>
     <p>
-      <%= f.submit "Sign Up", class: "btn btn-outline-success btn-lg" %>
+      <%= f.submit(@user.new_record? ? "Sign Up" : "Update Profile",  class: "btn btn-outline-success btn-lg") %>
     </p>
   <% end %>
   <p>
