@@ -1,0 +1,24 @@
+<%= render 'shared/errors', obj: @user %>
+
+<div class="container">
+  <%= form_with(model: @user, local: true) do |f| %>
+    <div class="form-group">
+      <%= f.label :username %>
+      <%= f.text_field :username, class: "form-control", placeholder: "Enter a username" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control", placeholder: "Enter email address" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-control", placeholder: "Enter a password" %>
+    </div>
+    <p>
+      <%= f.submit "Sign Up", class: "btn btn-outline-success btn-lg" %>
+    </p>
+  <% end %>
+  <p>
+    <%= link_to 'Return to Listings', articles_path, class: "btn btn-outline-dark" %>
+  </p>
+</div>
