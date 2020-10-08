@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  #relations to other objects
+  has_many :articles
   #validates :attribute-name, require-this: true
   validates :username, 
     presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 25 }
