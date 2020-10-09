@@ -1,4 +1,6 @@
 <div id="page-content">
   <h1 class="text-center mt-4">Article Listing</h1>
 
+<%= render 'shared/pagination', obj: @articles %>
 <%= render 'articles'%>
+<%= render 'shared/pagination', obj: @articles %>
