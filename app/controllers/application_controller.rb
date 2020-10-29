@@ -1,2 +1,22 @@
 class ApplicationController < ActionController::Base
+
+  # helper method in AppController allows method access in controllers and views, as oppose to in the helper function where it is only accessible in views
+  helper_method :current_user, :logged_in?
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]      
+  end
+
+  helper_method 
+  def logged_in?
+    !!current_user
+  end
+
+  def require_user
+    if !logged_in?
+      flash[:alert] = "You are not logged in"
+      redirect_to login_path
+    end
+  end
+
 end
